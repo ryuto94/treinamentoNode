@@ -11,10 +11,10 @@ module.exports = {
   async store(req, res) {
     const {
       autor,
-      imagem,
       like,
       descricao
     } = req.body;
+    const imagem = "http://localhost:3300/files/" + req.file.originalname;
     const posts = await post.create({
       autor,
       imagem,

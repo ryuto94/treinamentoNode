@@ -1,9 +1,20 @@
 import React from 'react';
-import Header from './components/Header/Header';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import NewPost from './pages/NewPost';
 
 class App extends React.Component{
   render(){
-    return(<Header />);
+    return(
+      <div>
+        <BrowserRouter>
+          <Switch>
+            <Route path="/home" component={Home}/>
+            <Route path="/post" component={NewPost}/>
+          </Switch>
+        </BrowserRouter>
+      </div>
+    );
   }
 }
 
